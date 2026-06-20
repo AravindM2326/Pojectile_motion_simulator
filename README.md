@@ -81,9 +81,15 @@ Final Velocity:        35.28 m/s
 Boundary Distance:     70.00 m
 IT'S A SIX! Ball cleared the boundary!
 ```
+<img width="1092" height="563" alt="image" src="https://github.com/user-attachments/assets/1bd321fa-4006-4940-9c53-0a3bbf062e57" />
+
+<img width="539" height="627" alt="image" src="https://github.com/user-attachments/assets/7c4cbfde-257b-4d36-a4d2-10a1348a44bf" />
+
 
 ## Possible improvements
 
 - Add air resistance / drag for more realistic flight paths
 - Animate the trajectory instead of static plots
 - Support different field shapes (some grounds aren't perfectly circular boundaries)
+
+
