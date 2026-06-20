@@ -16,7 +16,11 @@ Given the ball's launch speed, angle, and height, the simulator uses standard ki
 It then renders two plots:
 
 1. **Side view** — the curved trajectory of the ball, with the peak height marked and the boundary line shown
+<img width="1065" height="563" alt="image" src="https://github.com/user-attachments/assets/4c4abcc8-39e4-4777-bffd-f0af976f43f2" />
+
 2. **Top view** — the cricket field, the boundary circle, and the ball's path overlaid
+<img width="539" height="627" alt="Screenshot 2026-06-20 104628" src="https://github.com/user-attachments/assets/92927c70-8574-4dbf-9599-c00d3238c2bf" />
+
 
 ## How it works
 
