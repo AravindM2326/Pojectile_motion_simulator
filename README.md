@@ -1,95 +1,83 @@
-# Cricket Projectile Motion Simulator
+🏏 Cricket Projectile Motion Simulator
 
-A Python simulator that models the trajectory of a cricket ball as projectile motion, and determines whether a shot clears the boundary for a six.
+A Python simulator that models a cricket shot as projectile motion. Enter the
+ball's launch speed, angle, and field dimensions, and it calculates the full
+trajectory, checks whether the shot clears the boundary, and plots both a
+side view and a top-down view of the field.
 
-## What it does
-
-Given the ball's launch speed, angle, and height, the simulator uses standard kinematics equations to compute:
-
-- Maximum height reached
-- Time to reach maximum height
-- Total flight time
-- Horizontal range
-- Final velocity on landing
-- Whether the shot clears the boundary ("It's a six!")
-
-It then renders two plots:
-
-1. **Side view** — the curved trajectory of the ball, with the peak height marked and the boundary line shown
-2. **Top view** — the cricket field, the boundary circle, and the ball's path overlaid
-
-## How it works
-
-The physics is based on standard projectile motion equations:
-
-- Horizontal velocity: `vx = v * cos(θ)`
-- Vertical velocity: `vy = v * sin(θ)`
-- Trajectory: `y(t) = h + vy*t - 0.5*g*t²`
-- Total flight time (accounting for launch height) is found by solving the above for `y(t) = 0`
-
-## Requirements
-
-- Python 3.8+
-- matplotlib
-- numpy
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-## Usage
-
-Run the simulator:
-
-```bash
-python projectile_motion.py
-```
-
-You'll be prompted to enter:
-
-- Ground length and width (m)
-- Boundary distance (m)
-- Initial velocity (m/s)
-- Launch angle (degrees)
-- Launch height (m)
-- Gravity (m/s², defaults to 9.8 on Earth)
-
-The simulator will print the calculated results and display the trajectory plots. You can run multiple simulations in a row.
-
-## Example
-
-```
-Enter ground length (m): 150
-Enter ground width (m): 140
-Enter boundary distance (m): 70
-Enter initial velocity (m/s): 35
-Enter launch angle (degrees): 35
-Enter launch height (m): 1
-Enter gravity (m/s^2): 9.8
-```
-
-Output:
-
-```
-Maximum Height:        21.56 m
-Time to Max Height:    2.05 s
-Total Flight Time:     4.15 s
-Horizontal Range:      118.87 m
-Final Velocity:        35.28 m/s
-Boundary Distance:     70.00 m
-IT'S A SIX! Ball cleared the boundary!
-```
-<img width="1092" height="563" alt="image" src="https://github.com/user-attachments/assets/1bd321fa-4006-4940-9c53-0a3bbf062e57" />
-
-<img width="539" height="627" alt="image" src="https://github.com/user-attachments/assets/7c4cbfde-257b-4d36-a4d2-10a1348a44bf" />
+✨ Features
 
 
-## Possible improvements
+📐 Computes maximum height, time to max height, total flight time, horizontal
+range, and final velocity
+🎯 Determines whether the shot is a six (clears the boundary) or falls short
+📈 Renders a side view of the parabolic trajectory
+🗺️ Renders a top view of the trajectory on the cricket field, with the
+boundary shown as a dashed circle
+🔁 Lets you run multiple simulations in a row without restarting the script
 
-- Add air resistance / drag for more realistic flight paths
-- Animate the trajectory instead of static plots
-- Support different field shapes (some grounds aren't perfectly circular boundaries)
+
+🧰 Requirements
 
 
+🐍 Python 3.x
+matplotlib 📊
+numpy 🔢
+
+
+Install the dependencies with:
+
+bashpython -m pip install matplotlib numpy
+
+🚀 Usage
+
+Run the script:
+
+bashpython cricket_projectile_simulator.py
+
+You'll be prompted for the following inputs:
+
+InputDescriptionExample🏟️ Ground length (m)Length of the field150📏 Ground width (m)Width of the field150⭕ Boundary distance (m)Distance from the center to the boundary70💨 Initial velocity (m/s)Launch speed of the ball30📐 Launch angle (degrees)Angle of the shot above the horizontal35🏌️ Launch height (m)Height of the ball at the moment of the hit1🌍 Gravity (m/s²)Gravitational acceleration9.8
+
+After entering the values, the simulator prints the calculated results to the
+terminal and opens two plots.
+
+🖼️ Example Output
+
+With the example inputs above, the ball travels roughly 88 m — clearing the
+70 m boundary — so the simulator reports "IT'S A SIX! 🎉"
+
+📈 Side View
+
+Shows the ball's parabolic path, its peak height (marked with a ⭐), and the
+boundary line (dashed red).
+
+Show Image
+
+🗺️ Top View
+
+Shows the trajectory traced across the field, with the boundary marked as a
+dashed circle. The trajectory line crossing outside the circle confirms the
+shot is a six. 🏆
+
+Show Image
+
+🧮 How It Works
+
+The simulator uses standard projectile motion equations, accounting for a
+non-zero launch height:
+
+
+Velocity components: vx = v·cos(θ), vy = v·sin(θ)
+Flight time: solved from 0 = h + vy·t - ½g·t² using the quadratic formula
+Max height: h + vy² / (2g)
+Range: vx × total flight time
+Final velocity: √(vx² + vy_final²)
+
+
+💡 Notes
+
+
+🔺 Increase the velocity or adjust the angle to see the shot clear the
+boundary; lower the velocity to see a shot fall short.
+🎯 A launch angle around 35–45° typically maximizes range for a given velocity.
